@@ -18,4 +18,12 @@ class BatchCourses
     return @batch_course_list
   end
 
+  def to_string
+    puts ""
+    @batch_course_list.each do |batch_course|
+      puts "| :id => #{batch_course.id} , :name => #{user.name} |"
+    end
+    return
+  end
+
 end

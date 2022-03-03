@@ -8,9 +8,9 @@ def start_prompt
   puts 'Choose the table your want to access'
   puts '1. User'
   puts '2. Batch'
-  puts '3. Course'
-  puts '4. User Courses'
-  puts '5. Batch Courses'
+  # puts '3. Course'
+  # puts '4. User Courses'
+  # puts '5. Batch Courses'
   puts 'Enter Your choice'
 
   _table = gets.chomp.to_i

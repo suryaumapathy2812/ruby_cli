@@ -21,9 +21,9 @@ def batch_prompt
     puts 'Enter Batch details'
     puts 'Batch Name :'
     batch_name = gets.chomp
-    $user_table.insert_one(batch_name)
+    $batch_table.insert_one(batch_name)
     puts 'Batch created Successfully'
-    puts $user_table.to_string.to_s
+    puts $batch_table.to_string.to_s
     batch_prompt
 
   when 3
@@ -70,7 +70,7 @@ def batch_prompt
 
     # List User
     $user_table.list.each do |user|
-      puts "\n #{user.id}. #{user.name}"
+      puts "#{user.id}. #{user.name}"
     end
 
     # Get User Id

@@ -2,7 +2,7 @@
 require_relative "./tables/users.rb"
 require_relative "./tables/courses.rb"
 require_relative "./tables/batches.rb"
-require_relative "./tables/batch_users.rb"
+require_relative "./tables/user_courses.rb"
 require_relative "./tables/batch_courses.rb"
 
 
@@ -11,7 +11,7 @@ $user_table = Users.new()
 $course_table = Courses.new()
 $batch_table = Batches.new()
 
-$batch_user_table = BatchUsers.new()
+$user_course_table = UserCourses.new()
 $batch_course_table = BatchCourses.new()
 
 

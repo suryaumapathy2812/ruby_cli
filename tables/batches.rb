@@ -16,4 +16,12 @@ class Batches
     return @batch_list
   end
 
+  def to_string
+    puts ""
+    @batch_list.each do |batch|
+      puts "| :id => #{batch.id} , :name => #{batch.name} |"
+    end
+    return
+  end
+
 end

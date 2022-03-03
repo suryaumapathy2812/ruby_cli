@@ -17,4 +17,12 @@ class Users
     return @user_list
   end
 
+  def to_string
+    puts ""
+    @user_list.each do |user|
+      puts "| :id => #{user.id} , :name => #{user.name} |"
+    end
+    return
+  end
+
 end

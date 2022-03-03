@@ -1,53 +1,48 @@
-require_relative "./../model/batch.model.rb"
+# frozen_string_literal: true
+
+require_relative './../model/batch.model'
 
 class Batches
-
-  def initialize()
-    @batch_list = Array.new
+  def initialize
+    @batch_list = []
   end
 
-  def insert_one( batch_name )
-    _batch = BatchModel.new( batch_name )
-    _batch.id = @batch_list.length().to_i + 1
-    @batch_list.push( _batch )
+  def insert_one(batch_name)
+    _batch = BatchModel.new(batch_name)
+    _batch.id = @batch_list.length.to_i + 1
+    @batch_list.push(_batch)
   end
 
   def list
-    return @batch_list
+    @batch_list
   end
 
-  def find_one ( batch )
+  def find_one(batch)
     puts batch.keys
-    if batch.has_key?("id")
-      _batch = find_one_by_id (batch["id"])
-      return _batch
-    elsif batch.has_key?("name")
-      _batch = find_one_by_name (batch["name"])
-      return _batch
-    else
-      return nil
+    if batch.key?('id')
+      find_one_by_id(batch['id'])
+
+    elsif batch.key?('name')
+      find_one_by_name(batch['name'])
+
     end
   end
 
-
   def to_string
-    puts ""
+    puts ''
     @batch_list.each do |batch|
       puts "| :id => #{batch.id} , :name => #{batch.name} |"
     end
-    return
+    nil
   end
-
 
   private
-  private
-  def find_one_by_id (id)
-    _batch =  @batch_list.find { |batch|  (batch.id.to_i) == id }
-    return _batch
+
+  def find_one_by_id(id)
+    @batch_list.find { |batch| (batch.id.to_i) == id }
   end
 
-  def find_one_by_name (name)
-    return @batch_list.find { |batch|  batch.name == name }
+  def find_one_by_name(name)
+    @batch_list.find { |batch| batch.name == name }
   end
-
 end
